@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "kubevote-8883"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "kubevote-8883"
+    spec:
+      containers:
+        - name: "kubevote-8883"
+          image: "kubecontainerregistry2.azurecr.io/kubevote"
+          ports:
+          - containerPort: 80
